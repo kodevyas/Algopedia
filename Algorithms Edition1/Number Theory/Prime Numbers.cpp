@@ -115,6 +115,7 @@ further this can be used to find the following
 1. count the number of prime factors
 2. count the different prime factors
 3. sum of prime factors of n.
+
 */
 vector <lld> factors;
 vector <lld> power;
@@ -150,7 +151,47 @@ void factorisation(lld N)
 
 }
 
-//method 7
+//Method 7
+/* Finding number of prime factors for a range of number
+
+*/
+vector<ld>diffPrime(N,0);
+vector<ld> countDiffPrime(ld N)
+{
+	FOR (i,2,N,1)
+	{
+		if(diffPrime[i]==0)
+		{
+			FOR(j,i,N,i)
+			{
+				diffPrime[j]++;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//method 8
 
 /*
 1. calculating the number of divisors of a number
@@ -184,7 +225,7 @@ return ans;
 
 
 
-//method 8
+//method 9
 //1. calculating the sum of divisors of a number
 ulld SumOfDivisors(ulld N)
 {
@@ -215,7 +256,8 @@ return Sum;
 }
 
 
-//Euler phi(N)
+//method 10
+//Euler phi(N) or Euler totient func(N)
 //It means number of numbers that are < N and co-prime to it ,.i.e. gcd(N,i)=1
 lld EulerPhi(lld N)
 {
@@ -227,10 +269,13 @@ lld EulerPhi(lld N)
 	{
 
 		lld factor=prime[i];
+		bool div=false;
 		while(N%prime[i]==0)
 		{
 			N/=prime[i];
+			div=true;
 		}
+        if(div)
 		EulerPhiNumber=(EulerPhiNumber/factor)*(factor-1);
 
 	  ++i;
@@ -241,4 +286,25 @@ lld EulerPhi(lld N)
 
     }
 return EulerPhiNumber;
+}
+
+//method 10 A
+// Euler phi for a range of number upto N
+vector<ld> EulerPhiRange(ld N)
+{
+    vector<ld>EulerPhi(N+1,0);
+    FOR(i,0,N,1)
+    {
+        EulerPhi[i]=i;
+    }
+    sieve();
+    for(int i=0; prime[i]<=N; i++)
+    {
+        FOR(j,prime[i],N,prime[i])
+        {
+            EulerPhi[j]-=(EulerPhi[j]/prime[i]);
+        }
+    }
+
+    return EulerPhi;
 }
