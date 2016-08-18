@@ -172,25 +172,6 @@ vector<ld> countDiffPrime(ld N)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //method 8
 
 /*
@@ -224,6 +205,31 @@ return ans;
 }
 
 
+//method 8A
+
+/*
+1. calculating the number of divisors for a range of numbers
+*/
+vector<lld> NumberOfDivisorsRange(lld N)
+{
+    sieve();
+    vector<lld>NumberOfDivisors(N+1,0);
+    for(int i=1;i<=N;i++)
+    {
+        FOR(j,i,N,i)
+        {
+            NumberOfDivisors[j]+=1;
+        }
+
+    }
+
+
+    return NumberOfDivisors;
+}
+
+
+
+
 
 //method 9
 //1. calculating the sum of divisors of a number
@@ -254,6 +260,30 @@ ulld SumOfDivisors(ulld N)
     }
 return Sum;
 }
+
+// Method 9A
+//Calculating sum of divisors of number over a range N
+
+vector<ld> SumOfDivisorsRange(ld N)
+{
+    sieve();
+    vector<ld>SumOfDivisors(N+1,0);
+    for(int i=1;i<=N;i++)
+    {
+        FOR(j,i,N,i)
+        {
+            SumOfDivisors[j]+=i;
+        }
+
+    }
+
+
+    return SumOfDivisors;
+}
+
+
+
+
 
 
 //method 10
