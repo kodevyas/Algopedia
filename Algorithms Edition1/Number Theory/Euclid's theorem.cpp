@@ -42,6 +42,9 @@ If 'd' doesn't divides 'c' there are no integral solution to the equation, else 
 other solutions can be generalised as , 
 xn=x0+(b/d)n
 yn=y0-(a/d)n
+
+Complexity : O(log(max(A, B)))
+
 */
 
 //store x, y, and d as global variables
