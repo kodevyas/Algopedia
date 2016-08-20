@@ -20,8 +20,26 @@ In simple words,
 
 */
 
+/*   
+    Overview of the code
+    
+    x =  ( ∑ (a[i]*M*inv[i]) ) % prod
+    Where 0 <= i <= n-1
+
+    a[i] is given array of remainders
+
+    prod is product of all given numbers
+    prod = num[0] * num[1] * ... * num[k-1]
+
+    M is product of all but num[i]
+    M = prod / num[i]
+
+    inv[i] = Modular Multiplicative Inverse of 
+    pp[i] with respect to num[i]
 
 
+
+*/
 lld expo(lld a, lld b, lld c) {
         lld ans=1;
         while(b) {
