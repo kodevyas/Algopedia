@@ -1,3 +1,11 @@
+// Author: Rahul Mishra
+// Email: rahul.mishra2003@gmail.com
+
+
+
+*****************************************************************************************************
+
+
 /*
 Bubble sorting algorithm
 O(n^2)
