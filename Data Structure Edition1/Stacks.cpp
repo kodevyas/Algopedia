@@ -1,5 +1,9 @@
+// Author: Rahul Mishra
+// Email: rahul.mishra2003@gmail.com
+
+
 /*
-we will  be using in built STL for implement stack
+we will  be using in built STL for implementing stack
 as it is memory efficient , easy manipulate, and quite handy
 
 */
