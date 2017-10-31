@@ -21,3 +21,6 @@ Well the final goal is to create a biggest __well curated__ list of __Algorithms
 
 ### To be a contributor
 __contact__ : rahul.mishra2003@gmail.com
+
+
+This change is for Hacktober 2017
